@@ -1,0 +1,7 @@
+.catagory{
+    list-style: none;
+}
+.catagory a{
+    text-decoration: none;
+    font-size: 1.4rem;
+}
