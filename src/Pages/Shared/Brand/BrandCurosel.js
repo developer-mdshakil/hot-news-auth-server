@@ -8,7 +8,7 @@ const BrandCurosel = () => {
         <Carousel>
         <Carousel.Item interval={1500}>
           <img
-            className="d-block w-100 h-75"
+            className="d-block w-100 h-[style{160px}]"
             src={brand1}
             alt="First slide"
           />
