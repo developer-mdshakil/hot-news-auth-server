@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { FaDiscord, FaFacebook, FaGithub, FaGoogle, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 import ListGroup from 'react-bootstrap/ListGroup';
+import BrandCurosel from '../../Brand/BrandCurosel';
 
 const Aside = () => {
     return (
@@ -21,6 +22,9 @@ const Aside = () => {
                 <ListGroup.Item className='border-0 shadow-lg mb-2 h5'> Privacy & Policy</ListGroup.Item>
                 <ListGroup.Item className='border-0 shadow-lg mb-2 h5'>Terms & Condition</ListGroup.Item>
                 </ListGroup>
+            </div>
+            <div>
+                <BrandCurosel></BrandCurosel>
             </div>
         </div>
     );

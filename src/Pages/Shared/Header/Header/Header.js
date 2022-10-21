@@ -3,7 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-import { FaPlus, FaUserCircle} from "react-icons/fa";;
+import { FaPlus, FaUserCircle} from "react-icons/fa";import Sidebar from '../../Sidebar/Sidebar/Sidebar';
+;
 
 
 const Header = () => {
@@ -25,6 +26,9 @@ const Header = () => {
                     </Nav.Link>
                     <Nav.Link href="#deets"><button type='file' className='px-3 py-1 rounded'><FaUserCircle /></button></Nav.Link>
                 </Nav>
+                <div className='d-lg-none'>
+                    <Sidebar></Sidebar>
+                </div>
                 </Navbar.Collapse>
             </Container>
             </Navbar>
