@@ -1,15 +1,42 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { FaDiscord, FaFacebook, FaGithub, FaGoogle, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 import ListGroup from 'react-bootstrap/ListGroup';
 import BrandCurosel from '../../Brand/BrandCurosel';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { AuthContext } from '../../../../Contexs/AuthProvider/AuthProvider';
 
 const Aside = () => {
+    const { googleLogin ,githubLogin} = useContext(AuthContext);
+
+    // provider here google provider 
+    const googleProvider = new GoogleAuthProvider();
+
+     const googleSignIn = () => {
+        googleLogin(googleProvider)
+        .then( result => {
+            const user = result.user;
+            console.log(user);
+        }).catch( error => console.error(error))
+     }
+     
+     //github providre here
+     const githubProdiver = new GithubAuthProvider();
+
+     //declare event handler with github signIN
+     const githubSignIn = () => {
+        githubLogin(githubProdiver)
+        .then( result => {
+            const user = result.user;
+            console.lg(user);
+        }).catch(error => console.error(error))
+     }
+
     return (
         <div>
             <ButtonGroup vertical>
-                <Button className='mb-2 px-5' variant="outline-primary"><FaGoogle /> Login via Googel</Button>
-                <Button className='mb-4 px-5' variant="outline-dark"><FaGithub /> Login via Github</Button>
+                <Button onClick={googleSignIn} className='mb-2 px-5' variant="outline-primary"><FaGoogle /> Login via Googel</Button>
+                <Button onClick={githubSignIn} className='mb-4 px-5' variant="outline-dark"><FaGithub /> Login via Github</Button>
             </ButtonGroup>
             <div className=''>
                 <h5>Find Us on</h5>
