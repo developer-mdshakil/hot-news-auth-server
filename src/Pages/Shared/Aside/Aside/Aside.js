@@ -28,7 +28,7 @@ const Aside = () => {
         githubLogin(githubProdiver)
         .then( result => {
             const user = result.user;
-            console.lg(user);
+            console.log(user);
         }).catch(error => console.error(error))
      }
 

@@ -4,11 +4,10 @@ import NewsSummary from '../../NewsSummary/NewsSummary';
 
 const Catagory = () => {
     const allNews = useLoaderData();
-    console.log(allNews);
     return (
         <div>
             <h2>This is catagory: {allNews.length}</h2>
-            <div>v  
+            <div>
                 {
                     allNews.map(news => <NewsSummary
                     key={news._id}

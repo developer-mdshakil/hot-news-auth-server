@@ -11,7 +11,17 @@ import { Link } from 'react-router-dom';
 
 
 const Header = () => {
-    const {user} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    //declare event hadler here
+    const logOutHandler = () => {
+        logOut()
+        .then(()=> {
+            alert('log Out succesfull')
+        }).catch(error => {
+            console.error(error)
+        })
+    }
     return (
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
@@ -19,8 +29,12 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto menu">
-                    <Link to="#news">News HeighLight</Link>
+                    <Link to="#news">News ALL</Link>
+                    {user?.uid ?
+                    <Link onClick={logOutHandler} to="/login">Logout</Link>
+                    :
                     <Link to="/login">Login</Link>
+                    }
                     <Link to="/register">Register</Link>
                 </Nav>
                 <Nav>
